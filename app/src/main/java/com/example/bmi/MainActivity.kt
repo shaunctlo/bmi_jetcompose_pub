@@ -17,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.bmi.ui.theme.BMITheme
 
@@ -38,7 +39,7 @@ class MainActivity : ComponentActivity() {
 fun EnterHeight(height: String, changed: (String) -> Unit) {
     TextField(
         value = height,
-        label = { Text("Enter your height in meter") },
+        label = { Text(stringResource(R.string.height_hint)) },
         onValueChange = changed,
         modifier = Modifier.fillMaxWidth()
     )
@@ -48,7 +49,7 @@ fun EnterHeight(height: String, changed: (String) -> Unit) {
 fun EnterWeight(weight: String, changed: (String) -> Unit) {
     TextField(
         value = weight,
-        label = { Text("Enter your weight in KG") },
+        label = { Text(stringResource(R.string.weight_hint)) },
         onValueChange = changed,
         modifier = Modifier.fillMaxWidth()
     )
@@ -57,7 +58,7 @@ fun EnterWeight(weight: String, changed: (String) -> Unit) {
 @Composable
 fun CalculateButton(clicked: () -> Unit) {
     Button(onClick = clicked) {
-        Text("Calculate")
+        Text(stringResource(R.string.calculate))
     }
 }
 
