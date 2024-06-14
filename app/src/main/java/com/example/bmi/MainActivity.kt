@@ -95,7 +95,12 @@ fun MainActivityContent() {
                 }
             }
         }
-        BMIText(bmi.value)
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            BMIText(bmi.value)
+        }
     }
 }
 
